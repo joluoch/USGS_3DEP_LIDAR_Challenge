@@ -1,11 +1,11 @@
 {
     "pipeline": [
         {
-            "bounds": " ",
-            "filename": " ",
-            "type": "readers.ept",
-            "tag": "readdata"
-                    },
+"bounds": "",
+"filename": "",
+"type": "readers.ept",
+"tag": "readdata"
+        },
         {
             "limits": "Classification![7:7]",
             "type": "filters.range",
@@ -16,8 +16,9 @@
             "tag": "wipeclasses",
             "type": "filters.assign"
         },
-        {
-            "out_srs": "EPSG:26915",
+         {
+            "in_srs" : "EPSG:3857",
+            "out_srs": "EPSG:2163",
             "tag": "reprojectUTM",
             "type": "filters.reprojection"
         },
@@ -26,7 +27,7 @@
             "type": "filters.smrf"
         },
         {
-            "limits": "Classification[2:7]",
+            "limits": "Classification[2:2]",
             "type": "filters.range",
             "tag": "classify"
         },

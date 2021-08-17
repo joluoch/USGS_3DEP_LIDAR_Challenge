@@ -1,6 +1,7 @@
 import pdal 
 import json 
 
+
 PUBLIC_DATA_PATH = 'https://s3-us-west-2.amazonaws.com/usgs-lidar-public/'
 
 Region = 'IA_FullState/'
@@ -14,8 +15,8 @@ ouput_filename_tif = '../tif/iowa.tif'
 pipeline_path = '../scripts/get_data.json'
 
 
-def get_raster_terrain(bounds=bound , region=Region, public_access_path = PUBLIC_DATA_PATH,
-                      output_filename_laz=output_filename_laz,ouput_filename_tif =ouput_filename_tif,pipeline_path =pipeline_path ):
+def get_raster_terrain(bounds=bound , region=Region, public_access_path = access_path,output_filename_laz=output_filename_laz,
+                       ouput_filename_tif = ouput_filename_tif,pipeline_path =pipeline_path ):
     
     with open(pipeline_path) as json_file:
         the_json = json.load(json_file)
