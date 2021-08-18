@@ -16,12 +16,6 @@
             "tag": "wipeclasses",
             "type": "filters.assign"
         },
-         {
-            "in_srs" : "EPSG:3857",
-            "out_srs": "EPSG:2163",
-            "tag": "reprojectUTM",
-            "type": "filters.reprojection"
-        },
         {
             "tag": "groundify",
             "type": "filters.smrf"
