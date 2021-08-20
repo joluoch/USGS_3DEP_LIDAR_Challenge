@@ -1,7 +1,7 @@
 {
     "pipeline": [
         {
-"bounds": "([-10425171.940, -10423171.940], [5164494.710, 5166494.710])",
+"bounds": "([-93.756155, 41.918015], [-93.747334, 41.921429])",
 "filename": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/IA_FullState/ept.json",
 "type": "readers.ept",
 "tag": "readdata"
@@ -17,7 +17,7 @@
             "type": "filters.assign"
         },
         {
-            "out_srs": "EPSG:26915",
+            "out_srs": "EPSG:3857",
             "tag": "reprojectUTM",
             "type": "filters.reprojection"
         
@@ -32,13 +32,13 @@
             "tag": "classify"
         },
         {
-            "filename": "iowa.laz",
+            "filename": "iow.laz",
             "inputs": [ "classify" ],
             "tag": "writerslas",
             "type": "writers.las"
         },
         {
-            "filename": "iowa.tif",
+            "filename": "iow.tif",
             "gdalopts": "tiled=yes,     compress=deflate",
             "inputs": [ "writerslas" ],
             "nodata": -9999,
@@ -48,9 +48,9 @@
             "window_size": 6
         },
         { 
-            "filename" : "iowa.geojson",
+            "filename" : "iow.csv",
             "type" : "writers.text",
-            "format": "geojson"
+            "format": "csv"
         }
 
         
