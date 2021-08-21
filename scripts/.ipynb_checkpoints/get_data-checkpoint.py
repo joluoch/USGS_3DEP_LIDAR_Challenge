@@ -84,7 +84,7 @@ def get_raster_terrain(region ,bounds , access_path , output_filename_laz,ouput_
         print(e)
         pass
 
-def geometry (csvpath): 
+def geometry (csvpath,region): 
     """
     takes the cvs output file and generates a geodataframe with the elevation and coordinates of every point 
     """
@@ -98,7 +98,7 @@ def geometry (csvpath):
     gdf = gpd.GeoDataFrame(geo, crs='epsg:4326',geometry=geometry)
     gdf = gdf[["Z", "geometry"]]
     gdf = gdf.rename(columns={"Z": "elevation_m", "geometry": "geometry"})
-    #gdf.to_csv()
+    gdf.to_csv("../csv/"+region+".csv")
     
     return gdf  
          
@@ -107,7 +107,7 @@ if (__name__== '__main__'):
     bound=sys.argv[1]
     Region,bound,access_path,output_filename_laz,output_filename_tif,output_filename_csv,pipeline_path=get_region_bound(region,bound)
     get_raster_terrain(Region,bound,access_path,output_filename_laz,output_filename_tif,output_filename_csv,pipeline_path)
-    geometry(output_filename_csv)
+    geometry(output_filename_csv,Region)
     
     
 
