@@ -6,20 +6,8 @@ import numpy as np
 import plotly.offline as go_offline
 import plotly.graph_objects as go
 
-#READING AND PARSING THE DATA
-file=open('../scripts/iow.csv')
-lines=file.readlines()
-n_line=len(lines)
-x=[]
-y=[]
-z=[]
-for i in range(1,n_line):
-    split_line=lines[i].split(",")
-    xyz_t=[]
-    x.append(float(split_line[0].rstrip()))
-    y.append(float(split_line[1].rstrip()))
-    z.append(float(split_line[2].rstrip()))
-    
+#READING  THE DATA
+
 #DISTANCE FUNCTION
 def distance(x1,y1,x2,y2):
     d=np.sqrt((x1-x2)**2+(y1-y2)**2)

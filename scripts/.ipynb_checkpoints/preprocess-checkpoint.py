@@ -19,10 +19,10 @@ from rasterio import mask
 import folium
 
 
-def geometry (csv : str): 
+def geometry (csvpath): 
     
     print ('===================READING CSV  =====================')
-    pan = pd.read_csv(csv)
+    pan = pd.read_csv(csvpath)
     
     geo = pan[["X","Y","Z"]]
     

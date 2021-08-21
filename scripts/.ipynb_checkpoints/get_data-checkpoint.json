@@ -1,8 +1,8 @@
 {
     "pipeline": [
         {
-"bounds": "([-93.756155, 41.918015], [-93.747334, 41.921429])",
-"filename": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/IA_FullState/ept.json",
+"bounds": "",
+"filename": "",
 "type": "readers.ept",
 "tag": "readdata"
         },
@@ -32,13 +32,13 @@
             "tag": "classify"
         },
         {
-            "filename": "iow.laz",
+            "filename": "",
             "inputs": [ "classify" ],
             "tag": "writerslas",
             "type": "writers.las"
         },
         {
-            "filename": "iow.tif",
+            "filename": "",
             "gdalopts": "tiled=yes,     compress=deflate",
             "inputs": [ "writerslas" ],
             "nodata": -9999,
@@ -48,7 +48,7 @@
             "window_size": 6
         },
         { 
-            "filename" : "iow.csv",
+            "filename" : "",
             "type" : "writers.text",
             "format": "csv"
         }
